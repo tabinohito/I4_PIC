@@ -1,0 +1,66 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Mon Oct 28 17:51:50 2019
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000004    program   0x0001ea
+.config_2007_BUILD/DEFAULT/PRODUCTION/SMP7_2.       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000004    0x0000f8      
+                            0x002007    0x002007      
+            249 out of 1094 program addresses used, program memory utilization is 22%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                      BCD   0x000093    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                 CHECKCNT   0x000055    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                  CLERCNT   0x00005a    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                  CLEROUT   0x000072    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                     MAIN   0x00001b    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                   MAINLP   0x000038    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                    OTHER   0x00000e    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+              OUTPUT_7SEG   0x000087    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                      POP   0x000015    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                    SPLIT   0x00007d    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                SPLITSTOP   0x000065    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+           SPLITSTOPSPLIT   0x00006c    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                     STOP   0x000075    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                   TIME01   0x000049    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                   TIME40   0x00004e    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+            WAITINTERRUPT   0x000034    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    OTHER   0x00000e    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                      POP   0x000015    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                     MAIN   0x00001b    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+            WAITINTERRUPT   0x000034    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                   MAINLP   0x000038    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                   TIME01   0x000049    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                   TIME40   0x00004e    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                 CHECKCNT   0x000055    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                  CLERCNT   0x00005a    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                SPLITSTOP   0x000065    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+           SPLITSTOPSPLIT   0x00006c    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                  CLEROUT   0x000072    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                     STOP   0x000075    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                    SPLIT   0x00007d    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+              OUTPUT_7SEG   0x000087    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+                      BCD   0x000093    program     static C:\Users\tttar\MPLABXProjects\SMP7_2.X\SMP7_2.asm
+
+

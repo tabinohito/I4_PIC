@@ -1,0 +1,3 @@
+Message[302] C:\USERS\TTTAR\MPLABXPROJECTS\SMP7_2.X\SMP7_2.ASM 64 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\TTTAR\MPLABXPROJECTS\SMP7_2.X\SMP7_2.ASM 65 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\TTTAR\MPLABXPROJECTS\SMP7_2.X\SMP7_2.ASM 67 : Register in operand not in bank 0.  Ensure that bank bits are correct.

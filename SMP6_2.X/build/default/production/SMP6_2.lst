@@ -1,0 +1,220 @@
+MPASM 5.84                        SMP6_2.ASM   7-17-2019  10:00:01         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001     LIST P = PIC16F84A
+                      00002     INCLUDE "P16F84A.INC"
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ; Build date : Mar 17 2019
+                      00005 ;  MPASM PIC16F84A processor include
+                      00006 ; 
+                      00007 ;  (c) Copyright 1999-2019 Microchip Technology, All rights reserved
+                      00008 ;==========================================================================
+                      00009 
+                      00209         LIST
+                      00003 
+2007   3FF2           00004     __CONFIG _HS_OSC & _CP_OFF & _WDT_OFF & _PWRTE_ON
+                      00005     
+  0000000C            00006 W_TEMP          EQU         0CH
+  0000000D            00007 STATUS_TEMP     EQU         0DH
+  0000000E            00008 TMP             EQU         0EH
+  0000000F            00009 FLG1            EQU         0FH
+  00000010            00010 FLG2            EQU         10H
+                      00011                 
+                      00012     ORG         0H
+0000   2???           00013     GOTO        MAIN
+                      00014     ORG         04H
+                      00015     
+                      00016 ;PUSH
+0004   008C           00017     MOVWF       W_TEMP
+0005   0803           00018     MOVF        STATUS, W
+0006   008D           00019     MOVWF       STATUS_TEMP
+                      00020     
+0007   0806           00021     MOVF        PORTB,  W
+0008   008E           00022     MOVWF       TMP
+                      00023     
+0009   1A8E           00024     BTFSC       TMP,    5
+000A   0990           00025     COMF        FLG2,   F
+000B   1A0E           00026     BTFSC       TMP,    4
+000C   098F           00027     COMF        FLG1,   F
+                      00028     
+                      00029 ;POP
+000D   080D           00030     MOVF        STATUS_TEMP,    W
+000E   0083           00031     MOVWF       STATUS
+000F   0E8C           00032     SWAPF       W_TEMP,   F
+0010   0E0C           00033     SWAPF       W_TEMP,   W
+0011   100B           00034     BCF         INTCON,   RBIF
+0012   0009           00035     RETFIE
+                      00036     
+0013                  00037 MAIN 
+0013   138B           00038     BCF         INTCON,   GIE
+0014   1683           00039     BSF         STATUS,   RP0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0015   0185           00040     CLRF        TRISA
+0016   3030           00041     MOVLW       030H
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+MPASM 5.84                        SMP6_2.ASM   7-17-2019  10:00:01         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0017   0086           00042     MOVWF       TRISB  
+0018   1283           00043     BCF         STATUS,   RP0
+0019   0185           00044     CLRF        PORTA
+001A   018F           00045     CLRF        FLG1
+001B   0190           00046     CLRF        FLG2
+001C   018E           00047     CLRF        TMP
+001D   158B           00048     BSF         INTCON,   RBIE
+001E   178B           00049     BSF         INTCON,   GIE
+001F   100B           00050     BCF         INTCON,   RBIF
+                      00051     
+0020                  00052 LOOP
+0020   180F           00053     BTFSC       FLG1,     0
+0021   140E           00054     BSF         TMP,      0
+0022   1C0F           00055     BTFSS       FLG1,     0
+0023   100E           00056     BCF         TMP,      0
+                      00057 
+0024   1810           00058     BTFSC       FLG2,     0
+0025   148E           00059     BSF         TMP,      1
+0026   1C10           00060     BTFSS       FLG2,     0
+0027   108E           00061     BCF         TMP,      1    
+                      00062     
+0028   080E           00063     MOVFW       TMP
+0029   0085           00064     MOVWF       PORTA
+002A   2???           00065     GOTO        LOOP
+                      00066     
+3FF2                  00067     END
+MPASM 5.84                        SMP6_2.ASM   7-17-2019  10:00:01         PAGE  3
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+C                                 00000000
+DC                                00000001
+EEADR                             00000009
+EECON1                            00000088
+EECON2                            00000089
+EEDATA                            00000008
+EEIE                              00000006
+EEIF                              00000004
+F                                 00000001
+FLG1                              0000000F
+FLG2                              00000010
+FSR                               00000004
+GIE                               00000007
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+LOOP                              00000020
+MAIN                              00000013
+NOT_PD                            00000003
+NOT_RBPU                          00000007
+NOT_TO                            00000004
+OPTION_REG                        00000081
+PCL                               00000002
+PCLATH                            0000000A
+PORTA                             00000005
+PORTB                             00000006
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+RA0                               00000000
+RA1                               00000001
+RA2                               00000002
+RA3                               00000003
+RA4                               00000004
+RB0                               00000000
+RB1                               00000001
+RB2                               00000002
+RB3                               00000003
+RB4                               00000004
+RB5                               00000005
+RB6                               00000006
+RB7                               00000007
+RBIE                              00000003
+RBIF                              00000000
+RD                                00000000
+RP0                               00000005
+RP1                               00000006
+STATUS                            00000003
+STATUS_TEMP                       0000000D
+MPASM 5.84                        SMP6_2.ASM   7-17-2019  10:00:01         PAGE  4
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+TMP                               0000000E
+TMR0                              00000001
+TMR0IE                            00000005
+TMR0IF                            00000002
+TRISA                             00000085
+TRISA0                            00000000
+TRISA1                            00000001
+TRISA2                            00000002
+TRISA3                            00000003
+TRISA4                            00000004
+TRISB                             00000086
+TRISB0                            00000000
+TRISB1                            00000001
+TRISB2                            00000002
+TRISB3                            00000003
+TRISB4                            00000004
+TRISB5                            00000005
+TRISB6                            00000006
+TRISB7                            00000007
+W                                 00000000
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+W_TEMP                            0000000C
+Z                                 00000002
+_CONFIG                           00002007
+_CP_OFF                           00003FFF
+_CP_ON                            0000000F
+_DEVID1                           00002006
+_FOSC_EXTRC                       00003FFF
+_FOSC_HS                          00003FFE
+_FOSC_LP                          00003FFC
+_FOSC_XT                          00003FFD
+_HS_OSC                           00003FFE
+_IDLOC0                           00002000
+_IDLOC1                           00002001
+_IDLOC2                           00002002
+_IDLOC3                           00002003
+_LP_OSC                           00003FFC
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDTE_OFF                         00003FFB
+_WDTE_ON                          00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FFD
+__16F84A                          00000001
+
+MPASM 5.84                        SMP6_2.ASM   7-17-2019  10:00:01         PAGE  5
+
+
+
+
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     2 reported,     0 suppressed
+
+

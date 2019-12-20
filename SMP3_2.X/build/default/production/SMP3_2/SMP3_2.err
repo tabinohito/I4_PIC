@@ -1,0 +1,3 @@
+Warning[205] SMP3_2\SMP3_2.ASM 1 : Found directive in column 1. (LIST)
+Message[302] SMP3_2\SMP3_2.ASM 12 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] SMP3_2\SMP3_2.ASM 14 : Register in operand not in bank 0.  Ensure that bank bits are correct.

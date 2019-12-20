@@ -1,0 +1,373 @@
+MPASM 5.84                        SMP9_4.ASM   12-18-2019  12:14:19         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001                 LIST P=PIC16F84A
+                      00002                 #INCLUDE<P16F84A.INC>
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ; Build date : Mar 17 2019
+                      00005 ;  MPASM PIC16F84A processor include
+                      00006 ; 
+                      00007 ;  (c) Copyright 1999-2019 Microchip Technology, All rights reserved
+                      00008 ;==========================================================================
+                      00009 
+                      00209         LIST
+                      00003                 
+2007   3FF2           00004                 __CONFIG _HS_OSC&_CP_OFF&_WDT_OFF&_PWRTE_ON
+                      00005 
+  0000000C            00006 W_TEMP          EQU             0CH
+  0000000D            00007 STATUS_TEMP     EQU             0DH
+  0000000E            00008 CNT1            EQU             0EH
+  0000000F            00009 CNTB            EQU             0FH
+  00000010            00010 TMPA            EQU             010H
+  00000011            00011 OUT             EQU             011H
+                      00012 
+                      00013                 ORG             0H
+0000   2???           00014                 GOTO    MAIN
+                      00015                         
+                      00016                 ORG             04H
+                      00017 
+                      00018 ;PUSH
+0004   008C           00019                 MOVWF   W_TEMP
+0005   0803           00020                 MOVF    STATUS,W
+0006   008D           00021                 MOVWF   STATUS_TEMP
+                      00022 
+0007   2???           00023                 CALL    CRECV
+0008   0091           00024                 MOVWF   OUT
+                      00025 
+                      00026 ;POP
+0009   080D           00027                 MOVF    STATUS_TEMP,W
+000A   0083           00028                 MOVWF   STATUS
+000B   0E8C           00029                 SWAPF   W_TEMP,F
+000C   0E0C           00030                 SWAPF   W_TEMP,W
+000D   108B           00031                 BCF             INTCON,INTF
+000E   0009           00032                 RETFIE
+                      00033 
+                      00034 ;REMAINING CODE GOES HERE
+                      00035 
+000F                  00036 MAIN
+000F   1683           00037                 BSF     STATUS,RP0
+0010   138B           00038                 BCF     INTCON,GIE
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0011   0185           00039                 CLRF    TRISA
+0012   30FE           00040                 MOVLW   0FEH
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0013   0086           00041                 MOVWF   TRISB
+MPASM 5.84                        SMP9_4.ASM   12-18-2019  12:14:19         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0014   1301           00042                 BCF     OPTION_REG,INTEDG
+0015   1283           00043                 BCF     STATUS,RP0
+0016   178B           00044                 BSF     INTCON,GIE
+0017   160B           00045                 BSF     INTCON,INTE
+                      00046 
+0018                  00047 MAINLP
+0018   0811           00048                 MOVF     OUT,W
+0019   3C30           00049                 SUBLW   030H
+001A   1903           00050                 BTFSC   STATUS, Z   ; ??????????
+001B   2???           00051                 GOTO     L0
+                      00052                 
+001C   0811           00053                 MOVF     OUT,W
+001D   3C31           00054                 SUBLW   031H
+001E   1903           00055                 BTFSC   STATUS, Z   ; ??????????
+001F   2???           00056                 GOTO     L1
+                      00057                 
+0020   0811           00058                 MOVF     OUT,W
+0021   3C32           00059                 SUBLW   032H
+0022   1903           00060                 BTFSC   STATUS, Z   ; ??????????
+0023   2???           00061                 GOTO     L2
+                      00062                 
+0024   0811           00063                 MOVF     OUT,W
+0025   3C33           00064                 SUBLW   033H
+0026   1903           00065                 BTFSC   STATUS, Z   ; ??????????
+0027   2???           00066                 GOTO     L3
+                      00067                 
+0028   0811           00068                 MOVF     OUT,W
+0029   3C33           00069                 SUBLW   033H
+002A   1903           00070                 BTFSC   STATUS, Z   ; ??????????
+002B   2???           00071                 GOTO     L3
+                      00072                 
+002C   0811           00073                 MOVF     OUT,W
+002D   3C34           00074                 SUBLW   034H
+002E   1903           00075                 BTFSC   STATUS, Z   ; ??????????
+002F   2???           00076                 GOTO     L4
+                      00077                 
+0030   0811           00078                 MOVF     OUT,W
+0031   3C35           00079                 SUBLW   035H
+0032   1903           00080                 BTFSC   STATUS, Z   ; ??????????
+0033   2???           00081                 GOTO     L5
+                      00082                 
+0034   0811           00083                 MOVF     OUT,W
+0035   3C36           00084                 SUBLW   036H
+0036   1903           00085                 BTFSC   STATUS, Z   ; ??????????
+0037   2???           00086                 GOTO     L6
+                      00087                 
+0038   0811           00088                 MOVF     OUT,W
+0039   3C37           00089                 SUBLW   037H
+003A   1903           00090                 BTFSC   STATUS, Z   ; ??????????
+003B   2???           00091                 GOTO     L7
+                      00092                 
+003C   0811           00093                 MOVF     OUT,W
+MPASM 5.84                        SMP9_4.ASM   12-18-2019  12:14:19         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+003D   3C38           00094                 SUBLW   038H
+003E   1903           00095                 BTFSC   STATUS, Z   ; ??????????
+003F   2???           00096                 GOTO     L8
+                      00097                 
+0040   0811           00098                 MOVF     OUT,W
+0041   3C39           00099                 SUBLW   039H
+0042   1903           00100                 BTFSC   STATUS, Z   ; ??????????
+0043   2???           00101                 GOTO     L9             
+                      00102                 
+0044   2???           00103                 GOTO     MAINLP
+                      00104 
+0045                  00105 L0
+0045   3000           00106                 MOVLW   00H
+0046   0085           00107                 MOVWF   PORTA
+0047   2???           00108                 GOTO    MAINLP
+0048                  00109 L1
+0048   3001           00110                 MOVLW   01H
+0049   0085           00111                 MOVWF   PORTA
+004A   2???           00112                 GOTO    MAINLP
+                      00113                 
+004B                  00114 L2
+004B   3002           00115                 MOVLW   02H
+004C   0085           00116                 MOVWF   PORTA
+004D   2???           00117                 GOTO    MAINLP
+                      00118 
+004E                  00119 L3
+004E   3003           00120                 MOVLW   03H
+004F   0085           00121                 MOVWF   PORTA
+0050   2???           00122                 GOTO    MAINLP
+                      00123                 
+0051                  00124 L4
+0051   3004           00125                 MOVLW   04H
+0052   0085           00126                 MOVWF   PORTA
+0053   2???           00127                 GOTO    MAINLP
+                      00128 
+0054                  00129 L5
+0054   3001           00130                 MOVLW   01H
+0055   0086           00131                 MOVWF   PORTB
+0056   2???           00132                 GOTO    MAINLP
+                      00133                 
+0057                  00134 L6
+0057   3002           00135                 MOVLW   02H
+0058   0086           00136                 MOVWF   PORTB
+0059   2???           00137                 GOTO    MAINLP
+                      00138                 
+005A                  00139 L7
+005A   3003           00140                 MOVLW   03H
+005B   0086           00141                 MOVWF   PORTB
+005C   2???           00142                 GOTO    MAINLP
+                      00143                 
+005D                  00144 L8
+005D   3004           00145                 MOVLW   04H
+005E   0086           00146                 MOVWF   PORTB
+MPASM 5.84                        SMP9_4.ASM   12-18-2019  12:14:19         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+005F   2???           00147                 GOTO    MAINLP
+                      00148                 
+0060                  00149 L9
+0060   3005           00150                 MOVLW   05H
+0061   0086           00151                 MOVWF   PORTB
+0062   2???           00152                 GOTO    MAINLP
+                      00153                 
+0063                  00154 CRECV
+0063   0190           00155                 CLRF    TMPA
+0064   3008           00156                 MOVLW   08H
+0065   008F           00157                 MOVWF   CNTB
+0066   2???           00158                 CALL    TIME156
+                      00159 
+0067                  00160 CRECVLP
+0067   1806           00161                 BTFSC   PORTB,0
+0068   1403           00162                 BSF     STATUS,C
+0069   1C06           00163                 BTFSS   PORTB,0
+006A   1003           00164                 BCF     STATUS,C
+006B   0C90           00165                 RRF     TMPA,F
+006C   2???           00166                 CALL    TIME104
+006D   0B8F           00167                 DECFSZ  CNTB,F
+006E   2???           00168                 GOTO    CRECVLP
+006F   0810           00169                 MOVF    TMPA,W
+0070   0008           00170                 RETURN
+                      00171 
+0071                  00172 TIME156
+0071   30C3           00173                 MOVLW   0C3H
+0072   008E           00174                 MOVWF   CNT1
+0073                  00175 LOOP1
+0073   0000           00176                 NOP
+0074   0B8E           00177                 DECFSZ  CNT1,F
+0075   2???           00178                 GOTO    LOOP1
+0076   0008           00179                 RETURN
+                      00180 
+0077                  00181 TIME104
+0077   3082           00182                 MOVLW   082H
+0078   008E           00183                 MOVWF   CNT1
+0079                  00184 LOOP2
+0079   0000           00185                 NOP
+007A   0B8E           00186                 DECFSZ  CNT1,F
+007B   2???           00187                 GOTO    LOOP2
+007C   0008           00188                 RETURN
+                      00189 
+3FF2                  00190                 END
+MPASM 5.84                        SMP9_4.ASM   12-18-2019  12:14:19         PAGE  5
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+C                                 00000000
+CNT1                              0000000E
+CNTB                              0000000F
+CRECV                             00000063
+CRECVLP                           00000067
+DC                                00000001
+EEADR                             00000009
+EECON1                            00000088
+EECON2                            00000089
+EEDATA                            00000008
+EEIE                              00000006
+EEIF                              00000004
+F                                 00000001
+FSR                               00000004
+GIE                               00000007
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+L0                                00000045
+L1                                00000048
+L2                                0000004B
+L3                                0000004E
+L4                                00000051
+L5                                00000054
+L6                                00000057
+L7                                0000005A
+L8                                0000005D
+L9                                00000060
+LOOP1                             00000073
+LOOP2                             00000079
+MAIN                              0000000F
+MAINLP                            00000018
+NOT_PD                            00000003
+NOT_RBPU                          00000007
+NOT_TO                            00000004
+OPTION_REG                        00000081
+OUT                               00000011
+PCL                               00000002
+PCLATH                            0000000A
+PORTA                             00000005
+PORTB                             00000006
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+RA0                               00000000
+RA1                               00000001
+RA2                               00000002
+RA3                               00000003
+RA4                               00000004
+MPASM 5.84                        SMP9_4.ASM   12-18-2019  12:14:19         PAGE  6
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RB0                               00000000
+RB1                               00000001
+RB2                               00000002
+RB3                               00000003
+RB4                               00000004
+RB5                               00000005
+RB6                               00000006
+RB7                               00000007
+RBIE                              00000003
+RBIF                              00000000
+RD                                00000000
+RP0                               00000005
+RP1                               00000006
+STATUS                            00000003
+STATUS_TEMP                       0000000D
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+TIME104                           00000077
+TIME156                           00000071
+TMPA                              00000010
+TMR0                              00000001
+TMR0IE                            00000005
+TMR0IF                            00000002
+TRISA                             00000085
+TRISA0                            00000000
+TRISA1                            00000001
+TRISA2                            00000002
+TRISA3                            00000003
+TRISA4                            00000004
+TRISB                             00000086
+TRISB0                            00000000
+TRISB1                            00000001
+TRISB2                            00000002
+TRISB3                            00000003
+TRISB4                            00000004
+TRISB5                            00000005
+TRISB6                            00000006
+TRISB7                            00000007
+W                                 00000000
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+W_TEMP                            0000000C
+Z                                 00000002
+_CONFIG                           00002007
+_CP_OFF                           00003FFF
+_CP_ON                            0000000F
+_DEVID1                           00002006
+_FOSC_EXTRC                       00003FFF
+_FOSC_HS                          00003FFE
+_FOSC_LP                          00003FFC
+MPASM 5.84                        SMP9_4.ASM   12-18-2019  12:14:19         PAGE  7
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_FOSC_XT                          00003FFD
+_HS_OSC                           00003FFE
+_IDLOC0                           00002000
+_IDLOC1                           00002001
+_IDLOC2                           00002002
+_IDLOC3                           00002003
+_LP_OSC                           00003FFC
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDTE_OFF                         00003FFB
+_WDTE_ON                          00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FFD
+__16F84A                          00000001
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     3 reported,     0 suppressed
+
+

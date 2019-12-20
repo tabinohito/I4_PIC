@@ -1,0 +1,60 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Wed Jun 19 09:51:15 2019
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x0000e2
+                   .cinit    romdata   0x000071    program   0x000004
+.config_2007_BUILD/DEFAULT/PRODUCTION/SMP4_3.       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000072      
+                            0x002007    0x002007      
+            116 out of 1094 program addresses used, program memory utilization is 10%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    LOOP1   0x000060    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                    LOOP2   0x000067    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                    LOOP3   0x00006d    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                     MAIN   0x000000    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                   MAINLP   0x000013    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                  PortA10   0x00004e    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                   PortA9   0x000048    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                  PortB10   0x000042    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                   PortB9   0x00003c    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+              ResetShiftL   0x000054    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+              ResetShiftR   0x000058    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                 TIME100M   0x00006b    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                 TIME100U   0x00005c    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                  TIME10M   0x000063    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     MAIN   0x000000    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                   MAINLP   0x000013    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                   PortB9   0x00003c    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                  PortB10   0x000042    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                   PortA9   0x000048    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                  PortA10   0x00004e    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+              ResetShiftL   0x000054    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+              ResetShiftR   0x000058    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                 TIME100U   0x00005c    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                    LOOP1   0x000060    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                  TIME10M   0x000063    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                    LOOP2   0x000067    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                 TIME100M   0x00006b    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+                    LOOP3   0x00006d    program     static C:\Users\tttar\MPLABXProjects\SMP4_3.X\SMP4_3.asm
+
+

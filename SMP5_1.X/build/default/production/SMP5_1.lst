@@ -1,0 +1,1750 @@
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001         LIST    P=PIC16F84A
+                      00002         INCLUDE "P16F84A.INC"
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ; Build date : Jan 21 2019
+                      00005 ;  MPASM PIC16F84A processor include
+                      00006 ; 
+                      00007 ;  (c) Copyright 1999-2019 Microchip Technology, All rights reserved
+                      00008 ;==========================================================================
+                      00009 
+                      00209         LIST
+                      00003                 
+2007   3FFA           00004         __CONFIG    _HS_OSC&_WDT_OFF
+                      00005                 
+  0000000C            00006 CNT1    EQU         0CH
+  0000000D            00007 CNT2    EQU         0DH
+  0000000E            00008 CNT3    EQU         0EH
+  00000010            00009 MY_CNT1 EQU         10H
+  00000011            00010 MY_CNT2 EQU         11H
+  00000012            00011 MY_CNT3 EQU         12H
+  00000013            00012 MY_CNT4 EQU         13H
+  00000014            00013 MY_CNT5 EQU         14H
+  00000015            00014 MY_CNT6 EQU         15H
+  00000016            00015 MY_CNT7 EQU         16H
+  00000017            00016 MY_CNT8 EQU         17H
+  00000018            00017 MY_CNT9 EQU         18H
+  00000019            00018 MY_CNT10 EQU        19H
+                      00019 
+                      00020         ORG         0H
+                      00021 
+0000                  00022 MAIN    
+0000   1683           00023         BSF         STATUS , RP0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0001   0186           00024         CLRF        TRISB
+0002   1283           00025         BCF         STATUS , RP0
+0003   2???           00026         GOTO        MAINLP
+                      00027         
+0004                  00028 MAINLP
+0004   2???           00029         CALL        D5_8
+0005   2???           00030         CALL        DELAY_16
+0006   2???           00031         CALL        D5_16
+0007   2???           00032         CALL        MYTIMEOUT2
+0008   2???           00033         CALL        D5_4
+0009   2???           00034         CALL        G5_8
+000A   2???           00035         CALL        DELAY_16
+000B   2???           00036         CALL        G5_16
+000C   2???           00037         CALL        MYTIMEOUT2
+000D   2???           00038         CALL        G5_4
+000E   2???           00039         CALL        B5_8
+000F   2???           00040         CALL        DELAY_16
+0010   2???           00041         CALL        B5_16
+0011   2???           00042         CALL        MYTIMEOUT2
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0012   2???           00043         CALL        B5_4
+0013   2???           00044         CALL        A5_4
+0014   2???           00045         CALL        MYTIMEOUT2
+0015   2???           00046         CALL        A5_4
+                      00047         
+0016   2???           00048         CALL        DELAY_4
+                      00049         
+0017   2???           00050         CALL        D5_8
+0018   2???           00051         CALL        DELAY_16
+0019   2???           00052         CALL        D5_16
+001A   2???           00053         CALL        MYTIMEOUT2
+001B   2???           00054         CALL        D5_4
+001C   2???           00055         CALL        MYTIMEOUT2
+001D   2???           00056         CALL        D5_32
+001E   2???           00057         CALL        DELAY_16
+001F   2???           00058         CALL        A5_8
+0020   2???           00059         CALL        MYTIMEOUT2
+0021   2???           00060         CALL        A5_8
+0022   2???           00061         CALL        MYTIMEOUT2
+0023   2???           00062         CALL        A5_4
+0024   2???           00063         CALL        MYTIMEOUT2
+0025   2???           00064         CALL        A5_32
+0026   2???           00065         CALL        C6_4
+0027   2???           00066         CALL        MYTIMEOUT2
+0028   2???           00067         CALL        C6_4
+0029   2???           00068         CALL        B5_8
+002A   2???           00069         CALL        MYTIMEOUT2
+002B   2???           00070         CALL        B5_8
+002C   2???           00071         CALL        B5_4
+002D   2???           00072         CALL        A5_4
+002E   2???           00073         CALL        MYTIMEOUT2
+002F   2???           00074         CALL        A5_4
+0030   2???           00075         CALL        G5_4
+0031   2???           00076         CALL        FS5_4
+0032   2???           00077         CALL        G5_4
+0033   2???           00078         CALL        MYTIMEOUT1
+0034   2???           00079         CALL        B5_4
+0035   2???           00080         CALL        A5_4
+0036   2???           00081         CALL        MYTIMEOUT2
+0037   2???           00082         CALL        A5_4
+0038   2???           00083         CALL        G5_4
+0039   2???           00084         CALL        MYTIMEOUT2
+003A   2???           00085         CALL        G5_4 ;2
+003B   2???           00086         CALL        G5_4 ;2
+003C   2???           00087         CALL        FS5_4
+003D   2???           00088         CALL        E5_4
+003E   2???           00089         CALL        MYTIMEOUT1
+003F   2???           00090         CALL        D5_4
+0040   2???           00091         CALL        D5_8
+                      00092         
+0041   2???           00093         CALL        DELAY_8
+0042   2???           00094         CALL        DELAY_4
+                      00095         
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0043   2???           00096         CALL        D5_8
+0044   2???           00097         CALL        DELAY_16
+0045   2???           00098         CALL        D5_16
+0046   2???           00099         CALL        MYTIMEOUT2
+0047   2???           00100         CALL        D5_4
+0048   2???           00101         CALL        G5_8
+0049   2???           00102         CALL        DELAY_16
+004A   2???           00103         CALL        G5_16
+004B   2???           00104         CALL        MYTIMEOUT2
+004C   2???           00105         CALL        G5_4
+004D   2???           00106         CALL        B5_8
+004E   2???           00107         CALL        DELAY_16
+004F   2???           00108         CALL        B5_16
+0050   2???           00109         CALL        MYTIMEOUT2
+0051   2???           00110         CALL        B5_4
+0052   2???           00111         CALL        A5_4
+0053   2???           00112         CALL        MYTIMEOUT2
+0054   2???           00113         CALL        A5_4
+0055   2???           00114         CALL        MYTIMEOUT2
+                      00115         
+0056   2???           00116         CALL        DELAY_4
+                      00117         
+0057   2???           00118         CALL        D5_8
+0058   2???           00119         CALL        DELAY_16
+0059   2???           00120         CALL        D5_16
+005A   2???           00121         CALL        D5_4
+005B   2???           00122         CALL        D5_32
+005C   2???           00123         CALL        DELAY_16
+005D   2???           00124         CALL        A5_8
+005E   2???           00125         CALL        A5_8
+005F   2???           00126         CALL        A5_4
+0060   2???           00127         CALL        A5_32
+0061   2???           00128         CALL        C6_4
+0062   2???           00129         CALL        C6_4
+0063   2???           00130         CALL        B5_8
+0064   2???           00131         CALL        B5_8
+0065   2???           00132         CALL        B5_4
+0066   2???           00133         CALL        A5_4
+0067   2???           00134         CALL        A5_4
+0068   2???           00135         CALL        G5_4
+0069   2???           00136         CALL        FS5_4
+006A   2???           00137         CALL        G5_4
+006B   2???           00138         CALL        B5_4
+006C   2???           00139         CALL        A5_4
+006D   2???           00140         CALL        A5_4
+006E   2???           00141         CALL        G5_4
+006F   2???           00142         CALL        G5_4
+0070   2???           00143         CALL        G5_4
+0071   2???           00144         CALL        FS5_4
+0072   2???           00145         CALL        G5_4
+0073   2???           00146         CALL        A5_4
+0074   2???           00147         CALL        A5_4
+0075   2???           00148         CALL        B5_4
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0076   2???           00149         CALL        B5_4
+0077   2???           00150         CALL        DELAY_4
+0078   2???           00151         CALL        DELAY_4
+0079   2???           00152         CALL        G5_4
+007A   2???           00153         CALL        G5_4
+007B   2???           00154         CALL        FS5_4
+007C   2???           00155         CALL        E5_4
+007D   2???           00156         CALL        D5_4
+007E   2???           00157         CALL        C5_4
+007F   2???           00158         CALL        D5_4
+0080   2???           00159         CALL        B5_L_8 ;2*8
+0081   2???           00160         CALL        B5_L_8 ;2*8
+0082   2???           00161         CALL        A5_4
+0083   2???           00162         CALL        G5_4
+0084   2???           00163         CALL        G5_4
+0085   2???           00164         CALL        G5_4
+0086   2???           00165         CALL        A5_4
+0087   2???           00166         CALL        B5_4
+0088   2???           00167         CALL        C6_4
+0089   2???           00168         CALL        C6_4
+008A   2???           00169         CALL        E5_4
+008B   2???           00170         CALL        DELAY_16
+008C   2???           00171         CALL        G5_8
+008D   2???           00172         CALL        G5_8
+008E   2???           00173         CALL        G5_4
+008F   2???           00174         CALL        G5_4
+0090   2???           00175         CALL        FS5_4
+0091   2???           00176         CALL        FS5_4
+0092   2???           00177         CALL        G5_4
+0093   2???           00178         CALL        G5_4
+0094   2???           00179         CALL        G5_4
+0095   2???           00180         CALL        G5_4
+0096   2???           00181         CALL        G5_4
+0097   2???           00182         CALL        G5_4
+0098   2???           00183         CALL        DELAY_4
+0099   2???           00184         CALL        DELAY_4
+009A   2???           00185         CALL        DELAY_4
+009B   2???           00186         CALL        DELAY_4
+009C   2???           00187         CALL        DELAY_4
+009D   2???           00188         CALL        DELAY_4
+009E   2???           00189         CALL        DELAY_4
+009F   2???           00190         CALL        DELAY_4
+                      00191                 
+00A0   2???           00192         GOTO       MAINLP
+                      00193         
+00A1                  00194 C5_4
+00A1   3004           00195         MOVLW       004H
+00A2   0095           00196         MOVWF       MY_CNT6
+00A3   2???           00197         CALL        C5_4_LOOP
+00A4   0008           00198         RETURN  
+00A5                  00199 C5_4_LOOP
+00A5   2???           00200         CALL        C5_16
+00A6   0B95           00201         DECFSZ      MY_CNT6,F
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00A7   2???           00202         GOTO        C5_4_LOOP
+00A8   0008           00203         RETURN  
+00A9                  00204 CS5_4
+00A9   3004           00205         MOVLW       004H
+00AA   0095           00206         MOVWF       MY_CNT6
+00AB   2???           00207         CALL        CS5_4_LOOP
+00AC   0008           00208         RETURN  
+00AD                  00209 CS5_4_LOOP
+00AD   2???           00210         CALL        CS5_16   
+00AE   0B95           00211         DECFSZ      MY_CNT6,F
+00AF   2???           00212         GOTO        CS5_4_LOOP  
+00B0   0008           00213         RETURN  
+00B1                  00214 D5_4
+00B1   3004           00215         MOVLW       004H
+00B2   0095           00216         MOVWF       MY_CNT6
+00B3   2???           00217         CALL        D5_4_LOOP
+00B4   0008           00218         RETURN  
+00B5                  00219 D5_4_LOOP
+00B5   2???           00220         CALL        D5_16  
+00B6   0B95           00221         DECFSZ      MY_CNT6,F
+00B7   2???           00222         GOTO        D5_4_LOOP   
+00B8   0008           00223         RETURN  
+00B9                  00224 DS5_4
+00B9   3004           00225         MOVLW       004H
+00BA   0095           00226         MOVWF       MY_CNT6
+00BB   2???           00227         CALL        DS5_4_LOOP
+00BC   0008           00228         RETURN  
+00BD                  00229 DS5_4_LOOP
+00BD   2???           00230         CALL        DS5_16   
+00BE   0B95           00231         DECFSZ      MY_CNT6,F
+00BF   2???           00232         GOTO        DS5_4_LOOP  
+00C0   0008           00233         RETURN  
+00C1                  00234 E5_4
+00C1   3004           00235         MOVLW       004H
+00C2   0095           00236         MOVWF       MY_CNT6
+00C3   2???           00237         CALL        E5_4_LOOP
+00C4   0008           00238         RETURN  
+00C5                  00239 E5_4_LOOP
+00C5   2???           00240         CALL        E5_16   
+00C6   0B95           00241         DECFSZ      MY_CNT6,F
+00C7   2???           00242         GOTO        E5_4_LOOP   
+00C8   0008           00243         RETURN  
+00C9                  00244 F5_4
+00C9   3004           00245         MOVLW       004H
+00CA   0095           00246         MOVWF       MY_CNT6
+00CB   2???           00247         CALL        F5_4_LOOP
+00CC   0008           00248         RETURN  
+00CD                  00249 F5_4_LOOP
+00CD   2???           00250         CALL        F5_16  
+00CE   0B95           00251         DECFSZ      MY_CNT6,F
+00CF   2???           00252         GOTO        F5_4_LOOP   
+00D0   0008           00253         RETURN  
+00D1                  00254 FS5_4
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00D1   3004           00255         MOVLW       004H
+00D2   0095           00256         MOVWF       MY_CNT6
+00D3   2???           00257         CALL        FS5_4_LOOP
+00D4   0008           00258         RETURN  
+00D5                  00259 FS5_4_LOOP
+00D5   2???           00260         CALL        FS5_16   
+00D6   0B95           00261         DECFSZ      MY_CNT6,F
+00D7   2???           00262         GOTO        FS5_4_LOOP  
+00D8   0008           00263         RETURN  
+00D9                  00264 G5_4
+00D9   3004           00265         MOVLW       004H
+00DA   0095           00266         MOVWF       MY_CNT6
+00DB   2???           00267         CALL        G5_4_LOOP
+00DC   0008           00268         RETURN  
+00DD                  00269 G5_4_LOOP
+00DD   2???           00270         CALL        G5_16 
+00DE   0B95           00271         DECFSZ      MY_CNT6,F
+00DF   2???           00272         GOTO        G5_4_LOOP   
+00E0   0008           00273         RETURN  
+00E1                  00274 GS5_4
+00E1   3004           00275         MOVLW       004H
+00E2   0095           00276         MOVWF       MY_CNT6
+00E3   2???           00277         CALL        GS5_4_LOOP
+00E4   0008           00278         RETURN  
+00E5                  00279 GS5_4_LOOP
+00E5   2???           00280         CALL        GS5_16   
+00E6   0B95           00281         DECFSZ      MY_CNT6,F
+00E7   2???           00282         GOTO        GS5_4_LOOP  
+00E8   0008           00283         RETURN  
+00E9                  00284 A5_4
+00E9   3004           00285         MOVLW       004H
+00EA   0095           00286         MOVWF       MY_CNT6
+00EB   2???           00287         CALL        A5_4_LOOP
+00EC   0008           00288         RETURN  
+00ED                  00289 A5_4_LOOP
+00ED   2???           00290         CALL        A5_16  
+00EE   0B95           00291         DECFSZ      MY_CNT6,F
+00EF   2???           00292         GOTO        A5_4_LOOP   
+00F0   0008           00293         RETURN  
+00F1                  00294 AS5_4
+00F1   3004           00295         MOVLW       004H
+00F2   0095           00296         MOVWF       MY_CNT6
+00F3   2???           00297         CALL        AS5_4_LOOP
+00F4   0008           00298         RETURN  
+00F5                  00299 AS5_4_LOOP
+00F5   2???           00300         CALL        AS5_16   
+00F6   0B95           00301         DECFSZ      MY_CNT6,F
+00F7   2???           00302         GOTO        AS5_4_LOOP  
+00F8   0008           00303         RETURN  
+00F9                  00304 B5_4
+00F9   3004           00305         MOVLW       004H
+00FA   0095           00306         MOVWF       MY_CNT6
+00FB   2???           00307         CALL        B5_4_LOOP
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE  7
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00FC   0008           00308         RETURN  
+00FD                  00309 B5_4_LOOP
+00FD   2???           00310         CALL        B5_16   
+00FE   0B95           00311         DECFSZ      MY_CNT6,F
+00FF   2???           00312         GOTO        B5_4_LOOP   
+0100   0008           00313         RETURN  
+0101                  00314 C6_4
+0101   3004           00315         MOVLW       004H
+0102   0095           00316         MOVWF       MY_CNT6
+0103   2???           00317         CALL        C6_4_LOOP
+0104   0008           00318         RETURN  
+0105                  00319 C6_4_LOOP
+0105   2???           00320         CALL        C6_16   
+0106   0B95           00321         DECFSZ      MY_CNT6,F
+0107   2???           00322         GOTO        C6_4_LOOP   
+0108   0008           00323         RETURN          
+                      00324 
+0109                  00325 C5_8
+0109   3002           00326         MOVLW       002H
+010A   0096           00327         MOVWF       MY_CNT7
+010B   2???           00328         CALL        C5_8_LOOP
+010C   0008           00329         RETURN  
+010D                  00330 C5_8_LOOP
+010D   2???           00331         CALL        C5_16
+010E   0B96           00332         DECFSZ      MY_CNT7,F
+010F   2???           00333         GOTO        C5_8_LOOP
+0110   0008           00334         RETURN  
+0111                  00335 CS5_8
+0111   3002           00336         MOVLW       002H
+0112   0096           00337         MOVWF       MY_CNT7
+0113   2???           00338         CALL        CS5_8_LOOP
+0114   0008           00339         RETURN  
+0115                  00340 CS5_8_LOOP
+0115   2???           00341         CALL        CS5_16  
+0116   0B96           00342         DECFSZ      MY_CNT7,F
+0117   2???           00343         GOTO        CS5_8_LOOP  
+0118   0008           00344         RETURN  
+0119                  00345 D5_8
+0119   3002           00346         MOVLW       002H
+011A   0096           00347         MOVWF       MY_CNT7
+011B   2???           00348         CALL        D5_8_LOOP
+011C   0008           00349         RETURN  
+011D                  00350 D5_8_LOOP
+011D   2???           00351         CALL        D5_16 
+011E   0B96           00352         DECFSZ      MY_CNT7,F
+011F   2???           00353         GOTO        D5_8_LOOP   
+0120   0008           00354         RETURN  
+0121                  00355 DS5_8
+0121   3002           00356         MOVLW       002H
+0122   0096           00357         MOVWF       MY_CNT7
+0123   2???           00358         CALL        DS5_8_LOOP
+0124   0008           00359         RETURN  
+0125                  00360 DS5_8_LOOP
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE  8
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0125   2???           00361         CALL        DS5_16   
+0126   0B96           00362         DECFSZ      MY_CNT7,F
+0127   2???           00363         GOTO        DS5_8_LOOP  
+0128   0008           00364         RETURN  
+0129                  00365 E5_8
+0129   3002           00366         MOVLW       002H
+012A   0096           00367         MOVWF       MY_CNT7
+012B   2???           00368         CALL        E5_8_LOOP
+012C   0008           00369         RETURN  
+012D                  00370 E5_8_LOOP
+012D   2???           00371         CALL        E5_16   
+012E   0B96           00372         DECFSZ      MY_CNT7,F
+012F   2???           00373         GOTO        E5_8_LOOP   
+0130   0008           00374         RETURN  
+0131                  00375 F5_8
+0131   3002           00376         MOVLW       002H
+0132   0096           00377         MOVWF       MY_CNT7
+0133   2???           00378         CALL        F5_8_LOOP
+0134   0008           00379         RETURN  
+0135                  00380 F5_8_LOOP
+0135   2???           00381         CALL        F5_16   
+0136   0B96           00382         DECFSZ      MY_CNT7,F
+0137   2???           00383         GOTO        F5_8_LOOP   
+0138   0008           00384         RETURN  
+0139                  00385 FS5_8
+0139   3002           00386         MOVLW       002H
+013A   0096           00387         MOVWF       MY_CNT7
+013B   2???           00388         CALL        FS5_8_LOOP
+013C   0008           00389         RETURN  
+013D                  00390 FS5_8_LOOP
+013D   2???           00391         CALL        FS5_16   
+013E   0B96           00392         DECFSZ      MY_CNT7,F
+013F   2???           00393         GOTO        FS5_8_LOOP  
+0140   0008           00394         RETURN
+0141                  00395 G5_8
+0141   3002           00396         MOVLW       002H
+0142   0096           00397         MOVWF       MY_CNT7
+0143   2???           00398         CALL        G5_8_LOOP
+0144   0008           00399         RETURN  
+0145                  00400 G5_8_LOOP
+0145   2???           00401         CALL        G5_16  
+0146   0B96           00402         DECFSZ      MY_CNT7,F
+0147   2???           00403         GOTO        G5_8_LOOP   
+0148   0008           00404         RETURN  
+0149                  00405 GS5_8
+0149   3002           00406         MOVLW       002H
+014A   0096           00407         MOVWF       MY_CNT7
+014B   2???           00408         CALL        GS5_8_LOOP
+014C   0008           00409         RETURN  
+014D                  00410 GS5_8_LOOP
+014D   2???           00411         CALL        GS5_16   
+014E   0B96           00412         DECFSZ      MY_CNT7,F
+014F   2???           00413         GOTO        GS5_8_LOOP  
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE  9
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0150   0008           00414         RETURN  
+0151                  00415 A5_8
+0151   3002           00416         MOVLW       002H
+0152   0096           00417         MOVWF       MY_CNT7
+0153   2???           00418         CALL        A5_8_LOOP
+0154   0008           00419         RETURN  
+0155                  00420 A5_8_LOOP
+0155   2???           00421         CALL        A5_16  
+0156   0B96           00422         DECFSZ      MY_CNT7,F
+0157   2???           00423         GOTO        A5_8_LOOP   
+0158   0008           00424         RETURN  
+0159                  00425 AS5_8
+0159   3002           00426         MOVLW       002H
+015A   0096           00427         MOVWF       MY_CNT7
+015B   2???           00428         CALL        AS5_8_LOOP
+015C   0008           00429         RETURN  
+015D                  00430 AS5_8_LOOP
+015D   2???           00431         CALL        AS5_16   
+015E   0B96           00432         DECFSZ      MY_CNT7,F
+015F   2???           00433         GOTO        AS5_8_LOOP  
+0160   0008           00434         RETURN  
+0161                  00435 B5_8
+0161   3002           00436         MOVLW       002H
+0162   0096           00437         MOVWF       MY_CNT7
+0163   2???           00438         CALL        B5_8_LOOP
+0164   0008           00439         RETURN  
+0165                  00440 B5_8_LOOP
+0165   2???           00441         CALL        B5_16   
+0166   0B96           00442         DECFSZ      MY_CNT7,F
+0167   2???           00443         GOTO        B5_8_LOOP   
+0168   0008           00444         RETURN  
+                      00445         
+0169                  00446 C6_8
+0169   3002           00447         MOVLW       002H
+016A   0096           00448         MOVWF       MY_CNT7
+016B   2???           00449         CALL        C6_8_LOOP
+016C   0008           00450         RETURN  
+016D                  00451 C6_8_LOOP
+016D   2???           00452         CALL        C6_16   
+016E   0B96           00453         DECFSZ      MY_CNT7,F
+016F   2???           00454         GOTO        C6_8_LOOP   
+0170   0008           00455         RETURN
+                      00456 
+0171                  00457 B5_L_8
+0171   3053           00458         MOVLW       053H
+0172   0094           00459         MOVWF       MY_CNT5
+0173   2???           00460         CALL        B5_L_8_LOOP
+0174   0008           00461         RETURN  
+0175                  00462 B5_L_8_LOOP
+0175   3000           00463         MOVLW       B'00000000' 
+0176   0086           00464         MOVWF       PORTB
+0177   2???           00465         CALL        B5_L
+0178   3001           00466         MOVLW       B'00000001' 
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 10
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0179   0086           00467         MOVWF       PORTB
+017A   2???           00468         CALL        B5_L            
+017B   0B94           00469         DECFSZ      MY_CNT5,F
+017C   2???           00470         GOTO        B5_L_8_LOOP 
+017D   0008           00471         RETURN  
+                      00472         
+017E                  00473 C6_16
+017E   3058           00474         MOVLW       058H
+017F   0094           00475         MOVWF       MY_CNT5
+0180   2???           00476         CALL        C6_16_LOOP
+0181   0008           00477         RETURN  
+0182                  00478 C6_16_LOOP
+0182   3000           00479         MOVLW       B'00000000' 
+0183   0086           00480         MOVWF       PORTB
+0184   2???           00481         CALL        C6
+0185   3001           00482         MOVLW       B'00000001' 
+0186   0086           00483         MOVWF       PORTB
+0187   2???           00484         CALL        C6      
+0188   0B94           00485         DECFSZ      MY_CNT5,F
+0189   2???           00486         GOTO        C6_16_LOOP  
+018A   0008           00487         RETURN  
+                      00488         
+018B                  00489 B5_16
+018B   3053           00490         MOVLW       053H
+018C   0094           00491         MOVWF       MY_CNT5
+018D   2???           00492         CALL        B5_16_LOOP
+018E   0008           00493         RETURN  
+018F                  00494 B5_16_LOOP
+018F   3000           00495         MOVLW       B'00000000' 
+0190   0086           00496         MOVWF       PORTB
+0191   2???           00497         CALL        B5
+0192   3001           00498         MOVLW       B'00000001' 
+0193   0086           00499         MOVWF       PORTB
+0194   2???           00500         CALL        B5      
+0195   0B94           00501         DECFSZ      MY_CNT5,F
+0196   2???           00502         GOTO        B5_16_LOOP  
+0197   0008           00503         RETURN  
+0198                  00504 AS5_16
+0198   304F           00505         MOVLW       04FH
+0199   0094           00506         MOVWF       MY_CNT5
+019A   2???           00507         CALL        AS5_16_LOOP
+019B   0008           00508         RETURN  
+019C                  00509 AS5_16_LOOP
+019C   3000           00510         MOVLW       B'00000000' 
+019D   0086           00511         MOVWF       PORTB
+019E   2???           00512         CALL        AS5
+019F   3001           00513         MOVLW       B'00000001' 
+01A0   0086           00514         MOVWF       PORTB
+01A1   2???           00515         CALL        AS5     
+01A2   0B94           00516         DECFSZ      MY_CNT5,F
+01A3   2???           00517         GOTO        AS5_16_LOOP 
+01A4   0008           00518         RETURN  
+01A5                  00519 A5_16
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 11
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+01A5   304A           00520         MOVLW       04AH
+01A6   0094           00521         MOVWF       MY_CNT5
+01A7   2???           00522         CALL        A5_16_LOOP
+01A8   0008           00523         RETURN  
+01A9                  00524 A5_16_LOOP
+01A9   3000           00525         MOVLW       B'00000000' 
+01AA   0086           00526         MOVWF       PORTB
+01AB   2???           00527         CALL        A5
+01AC   3001           00528         MOVLW       B'00000001' 
+01AD   0086           00529         MOVWF       PORTB
+01AE   2???           00530         CALL        A5      
+01AF   0B94           00531         DECFSZ      MY_CNT5,F
+01B0   2???           00532         GOTO        A5_16_LOOP  
+01B1   0008           00533         RETURN  
+01B2                  00534 GS5_16
+01B2   3046           00535         MOVLW       046H
+01B3   0094           00536         MOVWF       MY_CNT5
+01B4   2???           00537         CALL        GS5_16_LOOP
+01B5   0008           00538         RETURN  
+01B6                  00539 GS5_16_LOOP
+01B6   3000           00540         MOVLW       B'00000000' 
+01B7   0086           00541         MOVWF       PORTB
+01B8   2???           00542         CALL        GS5
+01B9   3001           00543         MOVLW       B'00000001' 
+01BA   0086           00544         MOVWF       PORTB
+01BB   2???           00545         CALL        GS5     
+01BC   0B94           00546         DECFSZ      MY_CNT5,F
+01BD   2???           00547         GOTO        GS5_16_LOOP 
+01BE   0008           00548         RETURN  
+01BF                  00549 G5_16
+01BF   3042           00550         MOVLW       042H
+01C0   0094           00551         MOVWF       MY_CNT5
+01C1   2???           00552         CALL        G5_16_LOOP
+01C2   0008           00553         RETURN  
+01C3                  00554 G5_16_LOOP
+01C3   3000           00555         MOVLW       B'00000000' 
+01C4   0086           00556         MOVWF       PORTB
+01C5   2???           00557         CALL        G5
+01C6   3001           00558         MOVLW       B'00000001' 
+01C7   0086           00559         MOVWF       PORTB
+01C8   2???           00560         CALL        G5      
+01C9   0B94           00561         DECFSZ      MY_CNT5,F
+01CA   2???           00562         GOTO        G5_16_LOOP  
+01CB   0008           00563         RETURN  
+01CC                  00564 FS5_16
+01CC   303E           00565         MOVLW       03EH
+01CD   0094           00566         MOVWF       MY_CNT5
+01CE   2???           00567         CALL        FS5_16_LOOP
+01CF   0008           00568         RETURN  
+01D0                  00569 FS5_16_LOOP
+01D0   3000           00570         MOVLW       B'00000000' 
+01D1   0086           00571         MOVWF       PORTB
+01D2   2???           00572         CALL        FS5
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 12
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+01D3   3001           00573         MOVLW       B'00000001' 
+01D4   0086           00574         MOVWF       PORTB
+01D5   2???           00575         CALL        FS5     
+01D6   0B94           00576         DECFSZ      MY_CNT5,F
+01D7   2???           00577         GOTO        FS5_16_LOOP 
+01D8   0008           00578         RETURN  
+01D9                  00579 F5_16
+01D9   303B           00580         MOVLW       03BH
+01DA   0094           00581         MOVWF       MY_CNT5
+01DB   2???           00582         CALL        F5_16_LOOP
+01DC   0008           00583         RETURN  
+01DD                  00584 F5_16_LOOP
+01DD   3000           00585         MOVLW       B'00000000' 
+01DE   0086           00586         MOVWF       PORTB
+01DF   2???           00587         CALL        F5
+01E0   3001           00588         MOVLW       B'00000001' 
+01E1   0086           00589         MOVWF       PORTB
+01E2   2???           00590         CALL        F5      
+01E3   0B94           00591         DECFSZ      MY_CNT5,F
+01E4   2???           00592         GOTO        F5_16_LOOP  
+01E5   0008           00593         RETURN  
+01E6                  00594 E5_16
+01E6   3038           00595         MOVLW       038H
+01E7   0094           00596         MOVWF       MY_CNT5
+01E8   2???           00597         CALL        E5_16_LOOP
+01E9   0008           00598         RETURN  
+01EA                  00599 E5_16_LOOP
+01EA   3000           00600         MOVLW       B'00000000' 
+01EB   0086           00601         MOVWF       PORTB
+01EC   2???           00602         CALL        E5
+01ED   3001           00603         MOVLW       B'00000001' 
+01EE   0086           00604         MOVWF       PORTB
+01EF   2???           00605         CALL        E5      
+01F0   0B94           00606         DECFSZ      MY_CNT5,F
+01F1   2???           00607         GOTO        E5_16_LOOP  
+01F2   0008           00608         RETURN  
+01F3                  00609 DS5_16
+01F3   3034           00610         MOVLW       034H
+01F4   0094           00611         MOVWF       MY_CNT5
+01F5   2???           00612         CALL        DS5_16_LOOP
+01F6   0008           00613         RETURN  
+01F7                  00614 DS5_16_LOOP
+01F7   3000           00615         MOVLW       B'00000000' 
+01F8   0086           00616         MOVWF       PORTB
+01F9   2???           00617         CALL        DS5
+01FA   3001           00618         MOVLW       B'00000001' 
+01FB   0086           00619         MOVWF       PORTB
+01FC   2???           00620         CALL        DS5     
+01FD   0B94           00621         DECFSZ      MY_CNT5,F
+01FE   2???           00622         GOTO        DS5_16_LOOP 
+01FF   0008           00623         RETURN  
+0200                  00624 D5_16
+0200   3031           00625         MOVLW       031H
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 13
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0201   0094           00626         MOVWF       MY_CNT5
+0202   2???           00627         CALL        D5_16_LOOP
+0203   0008           00628         RETURN  
+0204                  00629 D5_16_LOOP
+0204   3000           00630         MOVLW       B'00000000' 
+0205   0086           00631         MOVWF       PORTB
+0206   2???           00632         CALL        D5
+0207   3001           00633         MOVLW       B'00000001' 
+0208   0086           00634         MOVWF       PORTB
+0209   2???           00635         CALL        D5      
+020A   0B94           00636         DECFSZ      MY_CNT5,F
+020B   2???           00637         GOTO        D5_16_LOOP  
+020C   0008           00638         RETURN  
+020D                  00639 CS5_16
+020D   302F           00640         MOVLW       02FH
+020E   0094           00641         MOVWF       MY_CNT5
+020F   2???           00642         CALL        CS5_16_LOOP
+0210   0008           00643         RETURN  
+0211                  00644 CS5_16_LOOP
+0211   3000           00645         MOVLW       B'00000000' 
+0212   0086           00646         MOVWF       PORTB
+0213   2???           00647         CALL        CS5
+0214   3001           00648         MOVLW       B'00000001' 
+0215   0086           00649         MOVWF       PORTB
+0216   2???           00650         CALL        CS5     
+0217   0B94           00651         DECFSZ      MY_CNT5,F
+0218   2???           00652         GOTO        CS5_16_LOOP 
+0219   0008           00653         RETURN  
+021A                  00654 C5_16
+021A   302C           00655         MOVLW       02CH
+021B   0094           00656         MOVWF       MY_CNT5
+021C   2???           00657         CALL        C5_16_LOOP
+021D   0008           00658         RETURN  
+021E                  00659 C5_16_LOOP
+021E   3000           00660         MOVLW       B'00000000' 
+021F   0086           00661         MOVWF       PORTB
+0220   2???           00662         CALL        C5
+0221   3001           00663         MOVLW       B'00000001' 
+0222   0086           00664         MOVWF       PORTB
+0223   2???           00665         CALL        C5      
+0224   0B94           00666         DECFSZ      MY_CNT5,F
+0225   2???           00667         GOTO        C5_16_LOOP  
+0226   0008           00668         RETURN  
+                      00669         
+0227                  00670 B5_L
+0227   3002           00671         MOVLW       002H
+0228   0093           00672         MOVWF       MY_CNT4
+0229   2???           00673         CALL        B5_L_LOOP
+022A   0008           00674         RETURN  
+022B                  00675 B5_L_LOOP
+022B   2???           00676         CALL        B5
+022C   0B93           00677         DECFSZ      MY_CNT4,F   
+022D   2???           00678         GOTO        B5_L_LOOP   
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 14
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+022E   0008           00679         RETURN  
+022F                  00680 AS5_L
+022F   3002           00681         MOVLW       002H
+0230   0093           00682         MOVWF       MY_CNT4
+0231   2???           00683         CALL        B5_L_LOOP
+0232   0008           00684         RETURN  
+0233                  00685 AS5_L_LOOP
+0233   2???           00686         CALL        AS5
+0234   0B93           00687         DECFSZ      MY_CNT4,F   
+0235   2???           00688         GOTO        B5_L_LOOP   
+0236   0008           00689         RETURN  
+                      00690 ;A5_L
+                      00691 ;       MOVLW       002H
+                      00692 ;       MOVWF       MY_CNT4
+                      00693 ;       CALL        A5_L_LOOP
+                      00694 ;       RETURN  
+                      00695 ;A5_L_LOOP
+                      00696 ;       CALL        A5
+                      00697 ;       DECFSZ      MY_CNT4,F   
+                      00698 ;       GOTO        A5_L_LOOP   
+                      00699 ;       RETURN  
+                      00700 ;GS5_L
+                      00701 ;       MOVLW       002H
+                      00702 ;       MOVWF       MY_CNT4
+                      00703 ;       CALL        GS5_L_LOOP
+                      00704 ;       RETURN  
+                      00705 ;GS5_L_LOOP
+                      00706 ;       CALL        GS5
+                      00707 ;       DECFSZ      MY_CNT4,F   
+                      00708 ;       GOTO        GS5_L_LOOP  
+                      00709 ;       RETURN  
+                      00710 ;G5_L
+                      00711 ;       MOVLW       002H
+                      00712 ;       MOVWF       MY_CNT4
+                      00713 ;       CALL        G5_L_LOOP
+                      00714 ;       RETURN  
+                      00715 ;G5_L_LOOP
+                      00716 ;       CALL        G5
+                      00717 ;       DECFSZ      MY_CNT4,F   
+                      00718 ;       GOTO        G5_L_LOOP   
+                      00719 ;       RETURN  
+                      00720 ;FS5_L
+                      00721 ;       MOVLW       002H
+                      00722 ;       MOVWF       MY_CNT4
+                      00723 ;       CALL        FS5_L_LOOP
+                      00724 ;       RETURN  
+                      00725 ;FS5_L_LOOP
+                      00726 ;       CALL        FS5
+                      00727 ;       DECFSZ      MY_CNT4,F   
+                      00728 ;       GOTO        FS5_L_LOOP  
+                      00729 ;       RETURN  
+                      00730 ;F5_L
+                      00731 ;       MOVLW       002H
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 15
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00732 ;       MOVWF       MY_CNT4
+                      00733 ;       CALL        F5_L_LOOP
+                      00734 ;       RETURN  
+                      00735 ;F5_L_LOOP
+                      00736 ;       CALL        F5
+                      00737 ;       DECFSZ      MY_CNT4,F   
+                      00738 ;       GOTO        F5_L_LOOP   
+                      00739 ;       RETURN  
+                      00740 ;E5_L
+                      00741 ;       MOVLW       002H
+                      00742 ;       MOVWF       MY_CNT4
+                      00743 ;       CALL        E5_L_LOOP
+                      00744 ;       RETURN  
+                      00745 ;E5_L_LOOP
+                      00746 ;       CALL        E5
+                      00747 ;       DECFSZ      MY_CNT4,F   
+                      00748 ;       GOTO        E5_L_LOOP   
+                      00749 ;       RETURN  
+                      00750 ;DS5_L
+                      00751 ;       MOVLW       002H
+                      00752 ;       MOVWF       MY_CNT4
+                      00753 ;       CALL        DS5_L_LOOP
+                      00754 ;       RETURN  
+                      00755 ;DS5_L_LOOP
+                      00756 ;       CALL        DS5
+                      00757 ;       DECFSZ      MY_CNT4,F   
+                      00758 ;       GOTO        DS5_L_LOOP  
+                      00759 ;       RETURN  
+                      00760 ;D5_L
+                      00761 ;       MOVLW       002H
+                      00762 ;       MOVWF       MY_CNT4
+                      00763 ;       CALL        D5_L_LOOP
+                      00764 ;       RETURN  
+                      00765 ;D5_L_LOOP
+                      00766 ;       CALL        D5
+                      00767 ;       DECFSZ      MY_CNT4,F   
+                      00768 ;       GOTO        D5_L_LOOP   
+                      00769 ;       RETURN  
+                      00770 ;CS5_L
+                      00771 ;       MOVLW       002H
+                      00772 ;       MOVWF       MY_CNT4
+                      00773 ;       CALL        CS5_L_LOOP
+                      00774 ;       RETURN  
+                      00775 ;CS5_L_LOOP
+                      00776 ;       CALL        CS5
+                      00777 ;       DECFSZ      MY_CNT4,F   
+                      00778 ;       GOTO        CS5_L_LOOP  
+                      00779 ;       RETURN  
+                      00780 ;C5_L
+                      00781 ;       MOVLW       002H
+                      00782 ;       MOVWF       MY_CNT4
+                      00783 ;       CALL        C5_L_LOOP
+                      00784 ;       RETURN  
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 16
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00785 ;C5_L_LOOP
+                      00786 ;       CALL        C5
+                      00787 ;       DECFSZ      MY_CNT4,F   
+                      00788 ;       GOTO        C5_L_LOOP   
+                      00789 ;       RETURN          
+                      00790 
+0237                  00791 B5
+0237   3006           00792         MOVLW       006H
+0238   0090           00793         MOVWF       MY_CNT1
+0239   300A           00794         MOVLW       00AH
+023A   0091           00795         MOVWF       MY_CNT2
+023B   2???           00796         CALL        B1_LOOP
+023C   2???           00797         CALL        B2_LOOP
+023D   0000           00798         NOP
+023E   0000           00799         NOP
+023F   0008           00800         RETURN  
+0240                  00801 B1_LOOP
+0240   2???           00802         CALL        TIME1
+0241   0B90           00803         DECFSZ      MY_CNT1,F   
+0242   2???           00804         GOTO        B1_LOOP     
+0243   0008           00805         RETURN  
+0244                  00806 B2_LOOP
+0244   2???           00807         CALL        TIME2
+0245   0B91           00808         DECFSZ      MY_CNT2,F   
+0246   2???           00809         GOTO        B2_LOOP     
+0247   0008           00810         RETURN  
+0248                  00811 B3_LOOP
+0248   2???           00812         CALL        TIME3
+0249   0B92           00813         DECFSZ      MY_CNT3,F   
+024A   2???           00814         GOTO        B3_LOOP     
+024B   0008           00815         RETURN  
+                      00816         
+024C                  00817 AS5
+024C   3000           00818         MOVLW       000H
+024D   0090           00819         MOVWF       MY_CNT1
+024E   300B           00820         MOVLW       00BH
+024F   0091           00821         MOVWF       MY_CNT2
+0250   2???           00822         CALL        AS1_LOOP
+0251   2???           00823         CALL        AS2_LOOP
+0252   0008           00824         RETURN  
+0253                  00825 AS1_LOOP
+0253   2???           00826         CALL        TIME1
+0254   0B90           00827         DECFSZ      MY_CNT1,F   
+0255   2???           00828         GOTO        AS1_LOOP    
+0256   0008           00829         RETURN  
+0257                  00830 AS2_LOOP
+0257   2???           00831         CALL        TIME2
+0258   0B91           00832         DECFSZ      MY_CNT2,F   
+0259   2???           00833         GOTO        AS2_LOOP    
+025A   0008           00834         RETURN  
+025B                  00835 AS3_LOOP
+025B   2???           00836         CALL        TIME3
+025C   0B92           00837         DECFSZ      MY_CNT3,F   
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 17
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+025D   2???           00838         GOTO        AS3_LOOP    
+025E   0008           00839         RETURN  
+                      00840         
+025F                  00841 A5
+025F   300A           00842         MOVLW       00AH
+0260   0090           00843         MOVWF       MY_CNT1
+0261   300B           00844         MOVLW       00BH
+0262   0091           00845         MOVWF       MY_CNT2
+0263   2???           00846         CALL        A1_LOOP
+0264   2???           00847         CALL        A2_LOOP
+0265   0000           00848         NOP
+0266   0000           00849         NOP
+0267   0000           00850         NOP
+0268   0000           00851         NOP
+0269   0000           00852         NOP
+026A   0000           00853         NOP
+026B   0000           00854         NOP
+026C   0000           00855         NOP
+026D   0000           00856         NOP
+026E   0008           00857         RETURN  
+026F                  00858 A1_LOOP
+026F   2???           00859         CALL        TIME1
+0270   0B90           00860         DECFSZ      MY_CNT1,F   
+0271   2???           00861         GOTO        A1_LOOP     
+0272   0008           00862         RETURN  
+0273                  00863 A2_LOOP
+0273   2???           00864         CALL        TIME2
+0274   0B91           00865         DECFSZ      MY_CNT2,F   
+0275   2???           00866         GOTO        A2_LOOP     
+0276   0008           00867         RETURN  
+0277                  00868 A3_LOOP
+0277   2???           00869         CALL        TIME3
+0278   0B92           00870         DECFSZ      MY_CNT3,F   
+0279   2???           00871         GOTO        A3_LOOP     
+027A   0008           00872         RETURN  
+                      00873         
+027B                  00874 GS5
+027B   3005           00875         MOVLW       005H
+027C   0090           00876         MOVWF       MY_CNT1
+027D   300C           00877         MOVLW       00CH
+027E   0091           00878         MOVWF       MY_CNT2
+027F   2???           00879         CALL        GS1_LOOP
+0280   2???           00880         CALL        GS2_LOOP
+0281   0000           00881         NOP
+0282   0000           00882         NOP
+0283   0000           00883         NOP
+0284   0000           00884         NOP
+0285   0000           00885         NOP
+0286   0000           00886         NOP
+0287   0000           00887         NOP
+0288   0000           00888         NOP
+0289   0000           00889         NOP
+028A   0000           00890         NOP
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 18
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+028B   0008           00891         RETURN  
+028C                  00892 GS1_LOOP
+028C   2???           00893         CALL        TIME1
+028D   0B90           00894         DECFSZ      MY_CNT1,F   
+028E   2???           00895         GOTO        GS1_LOOP    
+028F   0008           00896         RETURN  
+0290                  00897 GS2_LOOP
+0290   2???           00898         CALL        TIME2
+0291   0B91           00899         DECFSZ      MY_CNT2,F   
+0292   2???           00900         GOTO        GS2_LOOP    
+0293   0008           00901         RETURN  
+0294                  00902 GS3_LOOP
+0294   2???           00903         CALL        TIME3
+0295   0B92           00904         DECFSZ      MY_CNT3,F   
+0296   2???           00905         GOTO        GS3_LOOP    
+0297   0008           00906         RETURN  
+                      00907         
+0298                  00908 G5
+0298   3001           00909         MOVLW       001H
+0299   0090           00910         MOVWF       MY_CNT1
+029A   300D           00911         MOVLW       00DH
+029B   0091           00912         MOVWF       MY_CNT2
+029C   2???           00913         CALL        G1_LOOP
+029D   2???           00914         CALL        G2_LOOP
+029E   0000           00915         NOP
+029F   0000           00916         NOP
+02A0   0000           00917         NOP
+02A1   0000           00918         NOP
+02A2   0000           00919         NOP
+02A3   0000           00920         NOP
+02A4   0008           00921         RETURN  
+02A5                  00922 G1_LOOP
+02A5   2???           00923         CALL        TIME1
+02A6   0B90           00924         DECFSZ      MY_CNT1,F   
+02A7   2???           00925         GOTO        G1_LOOP     
+02A8   0008           00926         RETURN  
+02A9                  00927 G2_LOOP
+02A9   2???           00928         CALL        TIME2
+02AA   0B91           00929         DECFSZ      MY_CNT2,F   
+02AB   2???           00930         GOTO        G2_LOOP     
+02AC   0008           00931         RETURN  
+02AD                  00932 G3_LOOP
+02AD   2???           00933         CALL        TIME3
+02AE   0B92           00934         DECFSZ      MY_CNT3,F   
+02AF   2???           00935         GOTO        G3_LOOP     
+02B0   0008           00936         RETURN          
+                      00937         
+02B1                  00938 FS5
+02B1   300E           00939         MOVLW       00EH
+02B2   0090           00940         MOVWF       MY_CNT1
+02B3   300D           00941         MOVLW       00DH
+02B4   0091           00942         MOVWF       MY_CNT2
+02B5   2???           00943         CALL        FS1_LOOP
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 19
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+02B6   2???           00944         CALL        FS2_LOOP
+02B7   0008           00945         RETURN  
+02B8                  00946 FS1_LOOP
+02B8   2???           00947         CALL        TIME1
+02B9   0B90           00948         DECFSZ      MY_CNT1,F   
+02BA   2???           00949         GOTO        FS1_LOOP    
+02BB   0008           00950         RETURN  
+02BC                  00951 FS2_LOOP
+02BC   2???           00952         CALL        TIME2
+02BD   0B91           00953         DECFSZ      MY_CNT2,F   
+02BE   2???           00954         GOTO        FS2_LOOP    
+02BF   0008           00955         RETURN  
+02C0                  00956 FS3_LOOP
+02C0   2???           00957         CALL        TIME3
+02C1   0B92           00958         DECFSZ      MY_CNT3,F   
+02C2   2???           00959         GOTO        FS3_LOOP    
+02C3   0008           00960         RETURN  
+                      00961         
+02C4                  00962 F5
+02C4   300B           00963         MOVLW       00BH
+02C5   0090           00964         MOVWF       MY_CNT1
+02C6   300E           00965         MOVLW       00EH
+02C7   0091           00966         MOVWF       MY_CNT2
+02C8   2???           00967         CALL        F1_LOOP
+02C9   2???           00968         CALL        F2_LOOP
+02CA   0000           00969         NOP
+02CB   0000           00970         NOP
+02CC   0000           00971         NOP
+02CD   0008           00972         RETURN  
+02CE                  00973 F1_LOOP
+02CE   2???           00974         CALL        TIME1
+02CF   0B90           00975         DECFSZ      MY_CNT1,F   
+02D0   2???           00976         GOTO        F1_LOOP     
+02D1   0008           00977         RETURN  
+02D2                  00978 F2_LOOP
+02D2   2???           00979         CALL        TIME2
+02D3   0B91           00980         DECFSZ      MY_CNT2,F   
+02D4   2???           00981         GOTO        F2_LOOP     
+02D5   0008           00982         RETURN  
+02D6                  00983 F3_LOOP
+02D6   2???           00984         CALL        TIME3
+02D7   0B92           00985         DECFSZ      MY_CNT3,F   
+02D8   2???           00986         GOTO        F3_LOOP     
+02D9   0008           00987         RETURN  
+                      00988         
+02DA                  00989 E5
+02DA   3009           00990         MOVLW       009H
+02DB   0090           00991         MOVWF       MY_CNT1
+02DC   300F           00992         MOVLW       00FH
+02DD   0091           00993         MOVWF       MY_CNT2
+02DE   2???           00994         CALL        E1_LOOP
+02DF   2???           00995         CALL        E2_LOOP
+02E0   0000           00996         NOP
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 20
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+02E1   0000           00997         NOP
+02E2   0000           00998         NOP
+02E3   0008           00999         RETURN  
+02E4                  01000 E1_LOOP
+02E4   2???           01001         CALL        TIME1
+02E5   0B90           01002         DECFSZ      MY_CNT1,F   
+02E6   2???           01003         GOTO        E1_LOOP     
+02E7   0008           01004         RETURN  
+02E8                  01005 E2_LOOP
+02E8   2???           01006         CALL        TIME2
+02E9   0B91           01007         DECFSZ      MY_CNT2,F   
+02EA   2???           01008         GOTO        E2_LOOP     
+02EB   0008           01009         RETURN  
+02EC                  01010 E3_LOOP
+02EC   2???           01011         CALL        TIME3
+02ED   0B92           01012         DECFSZ      MY_CNT3,F   
+02EE   2???           01013         GOTO        E3_LOOP     
+02EF   0008           01014         RETURN  
+                      01015         
+02F0                  01016 DS5
+02F0   3008           01017         MOVLW       008H
+02F1   0090           01018         MOVWF       MY_CNT1
+02F2   3010           01019         MOVLW       010H
+02F3   0091           01020         MOVWF       MY_CNT2
+02F4   2???           01021         CALL        DS1_LOOP
+02F5   2???           01022         CALL        DS2_LOOP
+02F6   0008           01023         RETURN  
+02F7                  01024 DS1_LOOP
+02F7   2???           01025         CALL        TIME1
+02F8   0B90           01026         DECFSZ      MY_CNT1,F   
+02F9   2???           01027         GOTO        DS1_LOOP    
+02FA   0008           01028         RETURN  
+02FB                  01029 DS2_LOOP
+02FB   2???           01030         CALL        TIME2
+02FC   0B91           01031         DECFSZ      MY_CNT2,F   
+02FD   2???           01032         GOTO        DS2_LOOP    
+02FE   0008           01033         RETURN  
+02FF                  01034 DS3_LOOP
+02FF   2???           01035         CALL        TIME3
+0300   0B92           01036         DECFSZ      MY_CNT3,F   
+0301   2???           01037         GOTO        DS3_LOOP    
+0302   0008           01038         RETURN  
+                      01039         
+0303                  01040 D5
+0303   3007           01041         MOVLW       007H
+0304   0090           01042         MOVWF       MY_CNT1
+0305   3011           01043         MOVLW       011H
+0306   0091           01044         MOVWF       MY_CNT2
+0307   2???           01045         CALL        D1_LOOP
+0308   2???           01046         CALL        D2_LOOP
+0309   0000           01047         NOP
+030A   0000           01048         NOP
+030B   0000           01049         NOP
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 21
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+030C   0000           01050         NOP
+030D   0000           01051         NOP
+030E   0000           01052         NOP
+030F   0000           01053         NOP
+0310   0000           01054         NOP
+0311   0000           01055         NOP
+0312   0000           01056         NOP
+0313   0000           01057         NOP
+0314   0008           01058         RETURN  
+0315                  01059 D1_LOOP
+0315   2???           01060         CALL        TIME1
+0316   0B90           01061         DECFSZ      MY_CNT1,F   
+0317   2???           01062         GOTO        D1_LOOP     
+0318   0008           01063         RETURN  
+0319                  01064 D2_LOOP
+0319   2???           01065         CALL        TIME2
+031A   0B91           01066         DECFSZ      MY_CNT2,F   
+031B   2???           01067         GOTO        D2_LOOP     
+031C   0008           01068         RETURN  
+031D                  01069 D3_LOOP
+031D   2???           01070         CALL        TIME3
+031E   0B92           01071         DECFSZ      MY_CNT3,F   
+031F   2???           01072         GOTO        D3_LOOP     
+0320   0008           01073         RETURN  
+                      01074         
+0321                  01075 CS5
+0321   3008           01076         MOVLW       008H
+0322   0090           01077         MOVWF       MY_CNT1
+0323   3012           01078         MOVLW       012H
+0324   0091           01079         MOVWF       MY_CNT2
+0325   2???           01080         CALL        CS1_LOOP
+0326   2???           01081         CALL        CS2_LOOP
+0327   0000           01082         NOP
+0328   0000           01083         NOP
+0329   0000           01084         NOP
+032A   0000           01085         NOP
+032B   0000           01086         NOP
+032C   0000           01087         NOP
+032D   0008           01088         RETURN  
+032E                  01089 CS1_LOOP
+032E   2???           01090         CALL        TIME1
+032F   0B90           01091         DECFSZ      MY_CNT1,F   
+0330   2???           01092         GOTO        CS1_LOOP    
+0331   0008           01093         RETURN  
+0332                  01094 CS2_LOOP
+0332   2???           01095         CALL        TIME2
+0333   0B91           01096         DECFSZ      MY_CNT2,F   
+0334   2???           01097         GOTO        CS2_LOOP    
+0335   0008           01098         RETURN  
+0336                  01099 CS3_LOOP
+0336   2???           01100         CALL        TIME3
+0337   0B92           01101         DECFSZ      MY_CNT3,F   
+0338   2???           01102         GOTO        CS3_LOOP    
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 22
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0339   0008           01103         RETURN  
+                      01104         
+033A                  01105 C5
+033A   300A           01106         MOVLW       00AH
+033B   0090           01107         MOVWF       MY_CNT1
+033C   3013           01108         MOVLW       013H
+033D   0091           01109         MOVWF       MY_CNT2
+033E   2???           01110         CALL        C1_LOOP
+033F   2???           01111         CALL        C2_LOOP
+0340   0000           01112         NOP
+0341   0008           01113         RETURN  
+0342                  01114 C1_LOOP
+0342   2???           01115         CALL        TIME1
+0343   0B90           01116         DECFSZ      MY_CNT1,F   
+0344   2???           01117         GOTO        C1_LOOP     
+0345   0008           01118         RETURN  
+0346                  01119 C2_LOOP
+0346   2???           01120         CALL        TIME2
+0347   0B91           01121         DECFSZ      MY_CNT2,F   
+0348   2???           01122         GOTO        C2_LOOP     
+0349   0008           01123         RETURN  
+034A                  01124 C3_LOOP
+034A   2???           01125         CALL        TIME3
+034B   0B92           01126         DECFSZ      MY_CNT3,F   
+034C   2???           01127         GOTO        C3_LOOP     
+034D   0008           01128         RETURN  
+                      01129         
+034E                  01130 C6
+034E   300C           01131         MOVLW       00CH
+034F   0090           01132         MOVWF       MY_CNT1
+0350   3009           01133         MOVLW       009H
+0351   0091           01134         MOVWF       MY_CNT2
+0352   2???           01135         CALL        C1_H_LOOP
+0353   2???           01136         CALL        C2_H_LOOP
+0354   0000           01137         NOP
+0355   0000           01138         NOP
+0356   0000           01139         NOP
+0357   0000           01140         NOP
+0358   0000           01141         NOP
+0359   0000           01142         NOP
+035A   0000           01143         NOP
+035B   0000           01144         NOP
+035C   0000           01145         NOP
+035D   0000           01146         NOP
+035E   0000           01147         NOP
+035F   0000           01148         NOP
+0360   0000           01149         NOP
+0361   0008           01150         RETURN  
+0362                  01151 C1_H_LOOP
+0362   2???           01152         CALL        TIME1
+0363   0B90           01153         DECFSZ      MY_CNT1,F   
+0364   2???           01154         GOTO        C1_H_LOOP   
+0365   0008           01155         RETURN  
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 23
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0366                  01156 C2_H_LOOP
+0366   2???           01157         CALL        TIME2
+0367   0B91           01158         DECFSZ      MY_CNT2,F   
+0368   2???           01159         GOTO        C2_H_LOOP   
+0369   0008           01160         RETURN  
+036A                  01161 C3_H_LOOP
+036A   2???           01162         CALL        TIME3
+036B   0B92           01163         DECFSZ      MY_CNT3,F   
+036C   2???           01164         GOTO        C3_LOOP     
+036D   0008           01165         RETURN  
+                      01166         
+036E                  01167 D5_32
+036E   300C           01168         MOVLW       00CH
+036F   0098           01169         MOVWF       MY_CNT9
+0370   2???           01170         CALL        D5_32_LOOP
+0371   0008           01171         RETURN  
+0372                  01172 D5_32_LOOP
+0372   3000           01173         MOVLW       B'00000000' 
+0373   0086           01174         MOVWF       PORTB
+0374   2???           01175         CALL        D5
+0375   3001           01176         MOVLW       B'00000001' 
+0376   0086           01177         MOVWF       PORTB
+0377   2???           01178         CALL        D5      
+0378   0B98           01179         DECFSZ      MY_CNT9,F
+0379   2???           01180         GOTO        D5_32_LOOP  
+037A   0008           01181         RETURN  
+                      01182 
+037B                  01183 A5_32
+037B   3012           01184         MOVLW       012H
+037C   0098           01185         MOVWF       MY_CNT9
+037D   2???           01186         CALL        A5_32_LOOP
+037E   0008           01187         RETURN  
+037F                  01188 A5_32_LOOP
+037F   3000           01189         MOVLW       B'00000000' 
+0380   0086           01190         MOVWF       PORTB
+0381   2???           01191         CALL        A5
+0382   3001           01192         MOVLW       B'00000001' 
+0383   0086           01193         MOVWF       PORTB
+0384   2???           01194         CALL        A5      
+0385   0B98           01195         DECFSZ      MY_CNT9,F
+0386   2???           01196         GOTO        A5_32_LOOP  
+0387   0008           01197         RETURN  
+                      01198         
+0388                  01199 DELAY_16
+0388   3000           01200         MOVLW       B'00000000' 
+0389   0086           01201         MOVWF       PORTB
+038A   302A           01202         MOVLW       02AH
+038B   0096           01203         MOVWF       MY_CNT7
+038C   2???           01204         CALL        DELAY_16_LOOP
+038D   0008           01205         RETURN  
+038E                  01206 DELAY_16_LOOP
+038E   0B96           01207         DECFSZ      MY_CNT7,F   
+038F   2???           01208         GOTO        TIME3       
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 24
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0390   0008           01209         RETURN
+                      01210 
+0391                  01211 DELAY_8
+0391   3000           01212         MOVLW       B'00000000' 
+0392   0086           01213         MOVWF       PORTB
+0393   3002           01214         MOVLW       002H
+0394   0097           01215         MOVWF       MY_CNT8
+0395   2???           01216         CALL        DELAY_8_LOOP
+0396   0008           01217         RETURN  
+0397                  01218 DELAY_8_LOOP
+0397   0B97           01219         DECFSZ      MY_CNT8,F   
+0398   2???           01220         GOTO        DELAY_16    
+0399   0008           01221         RETURN
+                      01222 
+039A                  01223 DELAY_4
+039A   3000           01224         MOVLW       B'00000000' 
+039B   0086           01225         MOVWF       PORTB
+039C   3002           01226         MOVLW       002H
+039D   0098           01227         MOVWF       MY_CNT9
+039E   2???           01228         CALL        DELAY_4_LOOP
+039F   0008           01229         RETURN  
+03A0                  01230 DELAY_4_LOOP
+03A0   0B98           01231         DECFSZ      MY_CNT9,F   
+03A1   2???           01232         GOTO        DELAY_8     
+03A2   0008           01233         RETURN  
+                      01234         
+03A3                  01235 TIME1
+03A3   3004           01236         MOVLW       04H
+03A4   008C           01237         MOVWF       CNT1                        
+03A5                  01238 LOOP1  
+03A5   0B8C           01239         DECFSZ      CNT1,F      
+03A6   2???           01240         GOTO        LOOP1                       
+03A7   0008           01241         RETURN
+                      01242         
+03A8                  01243 TIME2
+03A8   300C           01244         MOVLW       0CH
+03A9   008D           01245         MOVWF       CNT2        
+03AA                  01246 LOOP2
+03AA   2???           01247         CALL        TIME1
+03AB   0B8D           01248         DECFSZ      CNT2,F      
+03AC   2???           01249         GOTO        LOOP2       
+03AD   0008           01250         RETURN  
+                      01251 
+03AE                  01252 TIME3
+03AE   3028           01253         MOVLW       028H
+03AF   008E           01254         MOVWF       CNT3                        
+03B0                  01255 LOOP3
+03B0   2???           01256         CALL        TIME2
+03B1   0B8E           01257         DECFSZ      CNT3,F      
+03B2   2???           01258         GOTO        LOOP3       
+03B3   0008           01259         RETURN  
+                      01260 
+03B4                  01261 MYTIMEOUT1
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 25
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+03B4   3000           01262         MOVLW       B'00000000' 
+03B5   0086           01263         MOVWF       PORTB
+03B6   3002           01264         MOVLW       002H
+03B7   0098           01265         MOVWF       MY_CNT9
+03B8   2???           01266         CALL        MYTIMEOUT_LOOP
+03B9   0008           01267         RETURN  
+03BA                  01268 MYTIMEOUT_LOOP
+03BA   0B98           01269         DECFSZ      MY_CNT9,F   
+03BB   2???           01270         GOTO        DELAY_16    
+03BC   0008           01271         RETURN  
+                      01272         
+03BD                  01273 MYTIMEOUT2
+03BD   3000           01274         MOVLW       B'00000000' 
+03BE   0086           01275         MOVWF       PORTB
+03BF   2???           01276         CALL        DELAY_16
+03C0   0008           01277         RETURN  
+                      01278         
+3FFA                  01279         END
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 26
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+A1_LOOP                           0000026F
+A2_LOOP                           00000273
+A3_LOOP                           00000277
+A5                                0000025F
+A5_16                             000001A5
+A5_16_LOOP                        000001A9
+A5_32                             0000037B
+A5_32_LOOP                        0000037F
+A5_4                              000000E9
+A5_4_LOOP                         000000ED
+A5_8                              00000151
+A5_8_LOOP                         00000155
+AS1_LOOP                          00000253
+AS2_LOOP                          00000257
+AS3_LOOP                          0000025B
+AS5                               0000024C
+AS5_16                            00000198
+AS5_16_LOOP                       0000019C
+AS5_4                             000000F1
+AS5_4_LOOP                        000000F5
+AS5_8                             00000159
+AS5_8_LOOP                        0000015D
+AS5_L                             0000022F
+AS5_L_LOOP                        00000233
+B1_LOOP                           00000240
+B2_LOOP                           00000244
+B3_LOOP                           00000248
+B5                                00000237
+B5_16                             0000018B
+B5_16_LOOP                        0000018F
+B5_4                              000000F9
+B5_4_LOOP                         000000FD
+B5_8                              00000161
+B5_8_LOOP                         00000165
+B5_L                              00000227
+B5_L_8                            00000171
+B5_L_8_LOOP                       00000175
+B5_L_LOOP                         0000022B
+C                                 00000000
+C1_H_LOOP                         00000362
+C1_LOOP                           00000342
+C2_H_LOOP                         00000366
+C2_LOOP                           00000346
+C3_H_LOOP                         0000036A
+C3_LOOP                           0000034A
+C5                                0000033A
+C5_16                             0000021A
+C5_16_LOOP                        0000021E
+C5_4                              000000A1
+C5_4_LOOP                         000000A5
+C5_8                              00000109
+C5_8_LOOP                         0000010D
+C6                                0000034E
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 27
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+C6_16                             0000017E
+C6_16_LOOP                        00000182
+C6_4                              00000101
+C6_4_LOOP                         00000105
+C6_8                              00000169
+C6_8_LOOP                         0000016D
+CNT1                              0000000C
+CNT2                              0000000D
+CNT3                              0000000E
+CS1_LOOP                          0000032E
+CS2_LOOP                          00000332
+CS3_LOOP                          00000336
+CS5                               00000321
+CS5_16                            0000020D
+CS5_16_LOOP                       00000211
+CS5_4                             000000A9
+CS5_4_LOOP                        000000AD
+CS5_8                             00000111
+CS5_8_LOOP                        00000115
+D1_LOOP                           00000315
+D2_LOOP                           00000319
+D3_LOOP                           0000031D
+D5                                00000303
+D5_16                             00000200
+D5_16_LOOP                        00000204
+D5_32                             0000036E
+D5_32_LOOP                        00000372
+D5_4                              000000B1
+D5_4_LOOP                         000000B5
+D5_8                              00000119
+D5_8_LOOP                         0000011D
+DC                                00000001
+DELAY_16                          00000388
+DELAY_16_LOOP                     0000038E
+DELAY_4                           0000039A
+DELAY_4_LOOP                      000003A0
+DELAY_8                           00000391
+DELAY_8_LOOP                      00000397
+DS1_LOOP                          000002F7
+DS2_LOOP                          000002FB
+DS3_LOOP                          000002FF
+DS5                               000002F0
+DS5_16                            000001F3
+DS5_16_LOOP                       000001F7
+DS5_4                             000000B9
+DS5_4_LOOP                        000000BD
+DS5_8                             00000121
+DS5_8_LOOP                        00000125
+E1_LOOP                           000002E4
+E2_LOOP                           000002E8
+E3_LOOP                           000002EC
+E5                                000002DA
+E5_16                             000001E6
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 28
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+E5_16_LOOP                        000001EA
+E5_4                              000000C1
+E5_4_LOOP                         000000C5
+E5_8                              00000129
+E5_8_LOOP                         0000012D
+EEADR                             00000009
+EECON1                            00000088
+EECON2                            00000089
+EEDATA                            00000008
+EEIE                              00000006
+EEIF                              00000004
+F                                 00000001
+F1_LOOP                           000002CE
+F2_LOOP                           000002D2
+F3_LOOP                           000002D6
+F5                                000002C4
+F5_16                             000001D9
+F5_16_LOOP                        000001DD
+F5_4                              000000C9
+F5_4_LOOP                         000000CD
+F5_8                              00000131
+F5_8_LOOP                         00000135
+FS1_LOOP                          000002B8
+FS2_LOOP                          000002BC
+FS3_LOOP                          000002C0
+FS5                               000002B1
+FS5_16                            000001CC
+FS5_16_LOOP                       000001D0
+FS5_4                             000000D1
+FS5_4_LOOP                        000000D5
+FS5_8                             00000139
+FS5_8_LOOP                        0000013D
+FSR                               00000004
+G1_LOOP                           000002A5
+G2_LOOP                           000002A9
+G3_LOOP                           000002AD
+G5                                00000298
+G5_16                             000001BF
+G5_16_LOOP                        000001C3
+G5_4                              000000D9
+G5_4_LOOP                         000000DD
+G5_8                              00000141
+G5_8_LOOP                         00000145
+GIE                               00000007
+GS1_LOOP                          0000028C
+GS2_LOOP                          00000290
+GS3_LOOP                          00000294
+GS5                               0000027B
+GS5_16                            000001B2
+GS5_16_LOOP                       000001B6
+GS5_4                             000000E1
+GS5_4_LOOP                        000000E5
+GS5_8                             00000149
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 29
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+GS5_8_LOOP                        0000014D
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+LOOP1                             000003A5
+LOOP2                             000003AA
+LOOP3                             000003B0
+MAIN                              00000000
+MAINLP                            00000004
+MYTIMEOUT1                        000003B4
+MYTIMEOUT2                        000003BD
+MYTIMEOUT_LOOP                    000003BA
+MY_CNT1                           00000010
+MY_CNT10                          00000019
+MY_CNT2                           00000011
+MY_CNT3                           00000012
+MY_CNT4                           00000013
+MY_CNT5                           00000014
+MY_CNT6                           00000015
+MY_CNT7                           00000016
+MY_CNT8                           00000017
+MY_CNT9                           00000018
+NOT_PD                            00000003
+NOT_RBPU                          00000007
+NOT_TO                            00000004
+OPTION_REG                        00000081
+PCL                               00000002
+PCLATH                            0000000A
+PORTA                             00000005
+PORTB                             00000006
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+RA0                               00000000
+RA1                               00000001
+RA2                               00000002
+RA3                               00000003
+RA4                               00000004
+RB0                               00000000
+RB1                               00000001
+RB2                               00000002
+RB3                               00000003
+RB4                               00000004
+RB5                               00000005
+RB6                               00000006
+RB7                               00000007
+RBIE                              00000003
+RBIF                              00000000
+RD                                00000000
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 30
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RP0                               00000005
+RP1                               00000006
+STATUS                            00000003
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+TIME1                             000003A3
+TIME2                             000003A8
+TIME3                             000003AE
+TMR0                              00000001
+TMR0IE                            00000005
+TMR0IF                            00000002
+TRISA                             00000085
+TRISA0                            00000000
+TRISA1                            00000001
+TRISA2                            00000002
+TRISA3                            00000003
+TRISA4                            00000004
+TRISB                             00000086
+TRISB0                            00000000
+TRISB1                            00000001
+TRISB2                            00000002
+TRISB3                            00000003
+TRISB4                            00000004
+TRISB5                            00000005
+TRISB6                            00000006
+TRISB7                            00000007
+W                                 00000000
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_CONFIG                           00002007
+_CP_OFF                           00003FFF
+_CP_ON                            0000000F
+_DEVID1                           00002006
+_FOSC_EXTRC                       00003FFF
+_FOSC_HS                          00003FFE
+_FOSC_LP                          00003FFC
+_FOSC_XT                          00003FFD
+_HS_OSC                           00003FFE
+_IDLOC0                           00002000
+_IDLOC1                           00002001
+_IDLOC2                           00002002
+_IDLOC3                           00002003
+_LP_OSC                           00003FFC
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDTE_OFF                         00003FFB
+_WDTE_ON                          00003FFF
+_WDT_OFF                          00003FFB
+MPASM 5.83                        SMP5_1.ASM   7-10-2019  10:25:07         PAGE 31
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FFD
+__16F84A                          00000001
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     1 reported,     0 suppressed
+
+

@@ -1,0 +1,14 @@
+    LIST P = PIC16F84A
+    INCLUDE "P16F84A.INC"
+
+    __CONFIG _HS_OSC
+    
+    ORG 0H
+MAIN 
+    BSF STATUS, RP0
+    CLRF TRISB
+    BCF STATUS,RP0
+    CLRF PORTB
+    BSF PORTB, 0
+    
+    END
