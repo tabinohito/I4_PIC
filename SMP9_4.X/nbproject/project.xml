@@ -4,13 +4,13 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>SMP9_4</name>
-            <creation-uuid>d7bf9f1c-7ac0-45ca-8efa-c474c064462a</creation-uuid>
+            <creation-uuid>27e8c4f8-0a98-4c92-9995-d73f4109c336</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions/>
             <cpp-extensions/>
             <header-extensions/>
             <asminc-extensions/>
-            <sourceEncoding>ISO-8859-1</sourceEncoding>
+            <sourceEncoding>Shift_JIS</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList/>
             <confList>

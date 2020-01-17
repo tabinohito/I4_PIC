@@ -1,12 +1,12 @@
 MPLINK 5.09, LINKER
-Linker Map File - Created Wed Dec 18 12:14:20 2019
+Linker Map File - Created Wed Jan 15 12:16:13 2020
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
                 ---------  ---------  ---------  ---------  ---------
                    .org_0       code   0x000000    program   0x000002
                    .cinit    romdata   0x000001    program   0x000004
-                   .org_1       code   0x000004    program   0x0000f2
+                   .org_1       code   0x000004    program   0x000092
 .config_2007_BUILD/DEFAULT/PRODUCTION/SMP9_4.       code   0x002007    program   0x000002
 
 
@@ -15,33 +15,27 @@ Linker Map File - Created Wed Dec 18 12:14:20 2019
                                Start         End      
                            ---------   ---------      
                             0x000000    0x000002      
-                            0x000004    0x00007c      
+                            0x000004    0x00004c      
                             0x002007    0x002007      
-            125 out of 1094 program addresses used, program memory utilization is 11%
+            77 out of 1094 program addresses used, program memory utilization is 7%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                    CRECV   0x000063    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                  CRECVLP   0x000067    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L0   0x000045    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L1   0x000048    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L2   0x00004b    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L3   0x00004e    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L4   0x000051    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L5   0x000054    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L6   0x000057    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L7   0x00005a    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L8   0x00005d    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L9   0x000060    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                    LOOP1   0x000073    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                    LOOP2   0x000079    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                    CRECV   0x000033    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                  CRECVLP   0x000037    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                       L0   0x000027    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                       L1   0x00002a    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                       L2   0x00002d    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                       L3   0x000030    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                    LOOP1   0x000043    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                    LOOP2   0x000049    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
                      MAIN   0x00000f    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
                    MAINLP   0x000018    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                  TIME104   0x000077    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                  TIME156   0x000071    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                  TIME104   0x000047    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                  TIME156   0x000041    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
 
 
 
@@ -50,21 +44,15 @@ Linker Map File - Created Wed Dec 18 12:14:20 2019
                 ---------  ---------  ---------  --------- ---------                
                      MAIN   0x00000f    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
                    MAINLP   0x000018    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L0   0x000045    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L1   0x000048    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L2   0x00004b    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L3   0x00004e    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L4   0x000051    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L5   0x000054    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L6   0x000057    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L7   0x00005a    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L8   0x00005d    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                       L9   0x000060    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                    CRECV   0x000063    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                  CRECVLP   0x000067    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                  TIME156   0x000071    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                    LOOP1   0x000073    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                  TIME104   0x000077    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
-                    LOOP2   0x000079    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                       L0   0x000027    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                       L1   0x00002a    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                       L2   0x00002d    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                       L3   0x000030    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                    CRECV   0x000033    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                  CRECVLP   0x000037    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                  TIME156   0x000041    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                    LOOP1   0x000043    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                  TIME104   0x000047    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
+                    LOOP2   0x000049    program     static C:\Users\tttar\MPLABXProjects\SMP9_4.X\SMP9_4.asm
 
 
