@@ -1,0 +1,54 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Wed Jan 22 11:13:04 2020
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000004    program   0x000088
+.config_2007_BUILD/DEFAULT/PRODUCTION/SMP9_5.       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000004    0x000047      
+                            0x002007    0x002007      
+            72 out of 1094 program addresses used, program memory utilization is 6%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    CRECV   0x00002e    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+                  CRECVLP   0x000032    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+                    CSEND   0x00001e    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+                  CSENDLP   0x000023    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+                    LOOP1   0x00003e    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+                    LOOP2   0x000044    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+                     MAIN   0x000014    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+                   MAINLP   0x00001d    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+                  TIME104   0x000042    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+                  TIME156   0x00003c    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     MAIN   0x000014    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+                   MAINLP   0x00001d    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+                    CSEND   0x00001e    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+                  CSENDLP   0x000023    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+                    CRECV   0x00002e    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+                  CRECVLP   0x000032    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+                  TIME156   0x00003c    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+                    LOOP1   0x00003e    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+                  TIME104   0x000042    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+                    LOOP2   0x000044    program     static C:\Users\tttar\MPLABXProjects\SMP9_5.X\SMP9_5.asm
+
+
